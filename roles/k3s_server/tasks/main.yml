@@ -95,6 +95,7 @@
         src: ~{{ ansible_user }}/.kube/config
         dest: ~/.kube/config
         flat: true
+      when: k3s_get_kubectl_config
 
 - name: Start other server if any and verify status
   when:
